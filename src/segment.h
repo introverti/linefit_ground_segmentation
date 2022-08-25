@@ -4,12 +4,12 @@
 #include <list>
 #include <map>
 
-#include "ground_segmentation/bin.h"
+#include "bin.h"
 
 class Segment {
 public:
   typedef std::pair<Bin::MinZPoint, Bin::MinZPoint> Line;
-
+  // K and T
   typedef std::pair<double, double> LocalLine;
 
 private:
@@ -60,6 +60,9 @@ public:
 
   inline std::vector<Bin>::iterator end() {
     return bins_.end();
+  }
+  inline size_t size() {
+    return bins_.size();
   }
 
   bool getLines(std::list<Line>* lines);

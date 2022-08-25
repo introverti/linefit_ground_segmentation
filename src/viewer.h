@@ -6,7 +6,7 @@
 
 #include <pcl/visualization/pcl_visualizer.h>
 
-#include "ground_segmentation/typedefs.h"
+#include "type.h"
 
 
 class Viewer {
@@ -23,8 +23,8 @@ protected:
 
   // Visualizer.
   pcl::visualization::PCLVisualizer viewer_;
-  std::thread view_thread_;
-  std::mutex viewer_mutex_;
+  // std::thread view_thread_;
+  // std::mutex viewer_mutex_;
   std::atomic<bool> redraw_{true};
 
   void visualizeLines(const std::list<PointLine>& lines);
@@ -34,6 +34,6 @@ protected:
 
   void addEmptyPointCloud(const std::string& id);
 
-  void drawThread();
+  // void drawThread();
 
 };
